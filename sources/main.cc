@@ -1,11 +1,15 @@
 #include <iostream>
+#include <bitset>
+#include "BloomFilter.h"
 #include "sha256.h"
 using namespace std;
 
- 
 int main() {
-	string input;
-	cin >> input;
-    string output = sha256(input);
-    cout << input << " hashed in sha256 is " << output << endl;
+  BloomFilter BF(10,1);
+  string input;
+  cout << "insert in bloom filter (0 to end): " << endl;
+  while (cin >> input and input != "0") BF.insert(input);
+  cout << "check contains (0 to end): " << endl;
+  while (cin >> input and input != "0")
+    cout << (BF.contains(input) ? "maybe in" : "not in") << endl;
 }
