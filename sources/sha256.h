@@ -1,6 +1,7 @@
 #ifndef SHA256_H
 #define SHA256_H
 #include <string>
+using std::string;
 
 class SHA256 {
 protected:
@@ -25,7 +26,7 @@ protected:
     uint32 m_h[8];
 };
  
-std::string sha256(std::string input);
+string sha256(string input);
  
 #define SHA2_SHFR(x, n) (x >> n)
 #define SHA2_ROTR(x, n) ((x >> n) | (x << ((sizeof(x) << 3) - n)))

@@ -1,5 +1,5 @@
-CXX = g++
-CXXFLAGS = -O3 -Wshadow -Wall -Wextra -Werror -Wno-uninitialized -Wno-sign-compare
+CXX = g++ -std=c++11
+CXXFLAGS = -O3 -Wshadow -Wall -Wextra -Wno-uninitialized -Wno-sign-compare
 LDFLAGS =
 
 SRCDIR = sources
