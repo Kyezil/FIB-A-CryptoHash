@@ -1,25 +1,42 @@
 #include <iostream>
 #include <string>
+#include <random>
 #include <algorithm>
 using namespace std;
 
-// taken from http://stackoverflow.com/a/12468109/2645412
-string random_string(size_t length ) {
-  auto randchar = []() -> char {
-    const char charset[] =
-    "0123456789"
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    "abcdefghijklmnopqrstuvwxyz";
-    const size_t max_index = (sizeof(charset) - 1);
-    return charset[ rand() % max_index ];
-  };
-  string str(length,0);
-  generate_n( str.begin(), length, randchar );
-  return str;
-}
+class RandomString {
+public:
+  static const char charset[];
+  static const size_t max_index;
+  
+  RandomString(int seed = 42) :
+    rand(seed), dis(0, max_index) {}
+  
+  string generate(size_t length) {
+    string str(length,0);
+    generate_n(str.begin(),length, [this]() -> char {
+      return randomChar();
+    });
+    return str;
+  }
+  
+private:
+  minstd_rand rand;
+  uniform_int_distribution<> dis;
+  inline char randomChar() {
+    return charset[dis(rand)];
+  }
+};
+
+const char RandomString::charset[] =
+  "abcdefghijklmnopqrstuvwxyz"
+  "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+  "0123456789";
+const size_t RandomString::max_index = sizeof(RandomString::charset) - 1;
 
 int main() {
+  RandomString rs;
   size_t d;
   while (cin >> d)
-    cout << random_string(d) << endl;
+    cout << rs.generate(d) << endl;
 }
