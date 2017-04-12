@@ -11,6 +11,7 @@ SRC = $(wildcard $(SRCDIR)/*.cc)
 OBJ = $(SRC:$(SRCDIR)/%.cc=$(OBJDIR)/%.o)
 TARGET = cryptohash.exe
 
+all: $(BINDIR)/$(TARGET)  generator
 
 $(BINDIR)/$(TARGET) : $(OBJ)
 	mkdir -p $(BINDIR)
@@ -26,10 +27,14 @@ $(OBJ): $(OBJDIR)/%.o : $(SRCDIR)/%.cc
 debug: CXXFLAGS += -D_GLIBCXX_DEBUG -pg
 debug: $(BINDIR)/$(TARGET)
 
+GENSRC = $(wildcard $(SRCDIR)/generator/*.cc)
+generator: $(GENSRC)
+	$(CXX) -o $(BINDIR)/gen.exe $<
+
 clean:
 	rm $(OBJ)
 	@echo "Cleanup complete!"
 
-remove: clean
-	rm $(BINDIR)/$(TARGET)
+remove: 
+	rm $(BINDIR)/$(TARGET) gen.exe
 	@echo "Executable removed!"
