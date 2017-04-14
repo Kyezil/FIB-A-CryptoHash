@@ -1,5 +1,5 @@
-#ifndef __MYEXPERIMENT1_H__
-#define __MYEXPERIMENT1_H__
+#ifndef __MYEXPERIMENT_H__
+#define __MYEXPERIMENT_H__
 #include "MyResult.h"
 #include <string>
 #include <vector>
@@ -7,7 +7,7 @@
 using std::string;
 using std::vector;
 
-class my_experiment_1 {
+class MyExperiment {
 
 public:
   void exp_init();
@@ -15,9 +15,9 @@ public:
   MyResult get_results();
 private:
   vector<string> saved_data; // strings saved in the bloom filter
-  vector<string> chacked_data; // strings we look for in the bloom filter
-  int k_hash_functions;
-  int m_blom_size;
+  vector<string> check_data; // strings we look for in the bloom filter
+  int k_hashes;
+  int m_size;
   MyResult result;
   
 };
