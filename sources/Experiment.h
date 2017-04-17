@@ -10,6 +10,8 @@ public:
     int m, n, k;    
     int num_hashes;
     double false_positive_ratio;
+    double time_insert;
+    double time_contains;
   };
   // prepare data or any precomputation
   virtual void init() {};

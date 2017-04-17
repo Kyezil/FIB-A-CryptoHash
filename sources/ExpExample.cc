@@ -7,7 +7,7 @@ ExpExample::ExpExample(string ex) {
   exampleParam = ex;
 }
 
-void ExpExample::execute() 
+void ExpExample::execute() {
   std::cout << "My param is " << exampleParam << std::endl;
 }
 
