@@ -2,19 +2,20 @@
 #include <vector>
 #include <memory>
 #include "Experiment.h"
-#include "ExpFullRandom.h"
+#include "ExpExample.h"
 using namespace std;
 
 int main() {
   vector<shared_ptr<Experiment> > experiments;
-  experiments.push_back(make_shared<ExpFullRandom>(10));
+  // list of experiments
+  experiments.push_back(make_shared<ExpExample>("exemple"));
     
   cout << "----- Bloom filter experiments -----" << endl;
   int expNum = 1;
   for (shared_ptr<Experiment> exp : experiments) {
     cout << "Experiment " << expNum++ << '\n'
          << '\t' << exp->getDescription() << endl;
-  }
+  }q
   cout << endl;
   
   int expChoice = 0;

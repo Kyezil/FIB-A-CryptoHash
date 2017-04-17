@@ -1,15 +1,15 @@
-#ifndef __EXPFULLRANDOM_H__
-#define __EXPFULLRANDOM_H__
+#ifndef __EXPEXAMPLE_H__
+#define __EXPEXAMPLE_H__
 #include "Experiment.h"
 
-class ExpFullRandom : public Experiment {
+class ExpExample : public Experiment {
 public:
-  ExpFullRandom(int n);
+  ExpExample(string ex);
   void execute() override;
   Result getResult() override;
   string getDescription() override;
 private:
-  int n;
+  string exampleParam;
 };
 
 #endif

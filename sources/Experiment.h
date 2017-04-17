@@ -9,7 +9,6 @@ public:
   struct Result {
     int m, n, k;    
     int num_hashes;
-    int time_taken;
     double false_positive_ratio;
   };
   // prepare data or any precomputation
