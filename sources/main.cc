@@ -5,6 +5,7 @@
 #include <algorithm>
 #include "Experiment.h"
 #include "ExpExample.h"
+#include "Exp1.h"
 #define REPS_PER_EXPERIMENT 10
 using namespace std;
 
@@ -19,12 +20,14 @@ void runExperiment(shared_ptr<Experiment> exp) {
   }
   // aqui s'ha de fer algo amb el vector results
   // mean, variance...
+
 }
 
 int main() {
   vector<shared_ptr<Experiment> > experiments;
   // list of experiments
   experiments.push_back(make_shared<ExpExample>("exemple"));
+  experiments.push_back(make_shared<Exp1>("nou exemple"));
     
   cout << "----- Bloom filter experiments -----" << endl;
   int expNum = 1;
