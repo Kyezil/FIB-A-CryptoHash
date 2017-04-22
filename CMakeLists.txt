@@ -25,5 +25,10 @@ target_link_libraries(cryptohash.exe experiments)
 add_executable(bf_example.exe src/test/bf_example.cc src/BloomFilter.cc src/DoubleHashingBF.cc)
 target_link_libraries(bf_example.exe utils)
 
+# hash example
 add_executable(hashes.exe src/test/hashes.cc)
 target_link_libraries(hashes.exe utils)
+
+# execution example
+add_executable(execution.exe src/test/execution.cc src/Execution.cc src/BloomFilter.cc src/DoubleHashingBF.cc)
+target_link_libraries(execution.exe experiments)
