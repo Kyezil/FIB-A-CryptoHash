@@ -10,11 +10,9 @@ class Execution {
 public:
   // common result class
   struct Result {
-    int m, n, k;
-    int num_hashes;
-    double false_positive_ratio;
-    double time_insert;
-    double time_contains;
+    int test_size;
+    double fp_ratio;
+    double total_time;
   };
   
   // init given bloomfilter with keys in stream
