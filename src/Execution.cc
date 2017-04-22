@@ -23,7 +23,7 @@ Execution::Result Execution::execute(istream &test) {
     if (BF.contains(s) and keys.find(s) == keys.end())
       ++fps;
   }  
-  result.total_time = timer.step();
+  result.test_time = timer.step();
   result.test_size = count;
   result.fp_ratio = double(fps)/count;
   return result;

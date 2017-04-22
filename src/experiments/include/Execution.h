@@ -12,12 +12,12 @@ public:
   struct Result {
     int test_size;
     double fp_ratio;
-    double total_time;
+    double test_time;
   };
   
   // init given bloomfilter with keys in stream
   Execution(BloomFilter &BF, istream &keys);
-  // 
+  
   Result execute(istream &test);
   
 private:

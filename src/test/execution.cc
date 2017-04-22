@@ -18,5 +18,5 @@ int main() {
   Execution::Result r = e1.execute(test);
   cout << "Input size : " << r.test_size
        << "\nFp ratio : " << r.fp_ratio
-       << "\nTotal time (s) : " << r.total_time << endl;
+       << "\nTotal time (s) : " << r.test_time << endl;
 }
