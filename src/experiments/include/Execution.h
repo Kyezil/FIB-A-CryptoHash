@@ -3,6 +3,7 @@
 #include "BloomFilter.h"
 #include <istream>
 #include <string>
+#include <vector>
 #include <unordered_set>
 using namespace std;
 

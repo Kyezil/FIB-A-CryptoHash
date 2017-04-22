@@ -3,8 +3,10 @@
 #include <vector>
 #include <memory>
 #include <algorithm>
+
 #include "Experiment.h"
 #include "ExpExample.h"
+#include "ExpOptimalK.h"
 using namespace std;
 
 
@@ -17,6 +19,7 @@ int main() {
   vector<shared_ptr<Experiment> > experiments;
   // list of experiments
   experiments.push_back(make_shared<ExpExample>("exemple"));
+  experiments.push_back(make_shared<ExpOptimalK>(1000,50,1,20));
     
   cout << "----- Bloom filter experiments -----" << endl;
   int expNum = 1;

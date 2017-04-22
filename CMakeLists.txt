@@ -30,5 +30,5 @@ add_executable(hashes.exe src/test/hashes.cc)
 target_link_libraries(hashes.exe utils)
 
 # execution example
-add_executable(execution.exe src/test/execution.cc src/Execution.cc src/BloomFilter.cc src/DoubleHashingBF.cc)
+add_executable(execution.exe src/test/execution.cc src/experiments/src/Execution.cc src/BloomFilter.cc src/DoubleHashingBF.cc)
 target_link_libraries(execution.exe experiments)

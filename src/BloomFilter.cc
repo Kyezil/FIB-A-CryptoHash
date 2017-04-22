@@ -1,6 +1,8 @@
 #include "BloomFilter.h"
 #include "sha256.h"
 
+BloomFilter::BloomFilter() : BloomFilter(0,0,false) {};
+
 BloomFilter::BloomFilter(int m, int k, bool s)
   : m_size(m), k_hashes(k), crypt(s), bits(m,false) {}
   
