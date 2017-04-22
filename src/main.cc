@@ -5,20 +5,12 @@
 #include <algorithm>
 #include "Experiment.h"
 #include "ExpExample.h"
-#define REPS_PER_EXPERIMENT 10
 using namespace std;
 
 
 void runExperiment(shared_ptr<Experiment> exp) {
   exp->init();
-  vector<Experiment::Result> results;
-  results.reserve(REPS_PER_EXPERIMENT);
-  for (int i = 0; i < REPS_PER_EXPERIMENT; ++i) {
-    exp->execute();
-    results.push_back(exp->getResult());
-  }
-  // aqui s'ha de fer algo amb el vector results
-  // mean, variance...
+  exp->execute();
 }
 
 int main() {

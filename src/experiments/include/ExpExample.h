@@ -6,7 +6,6 @@ class ExpExample : public Experiment {
 public:
   ExpExample(string ex);
   void execute() override;
-  Result getResult() override;
   string getDescription() override;
 private:
   string exampleParam;

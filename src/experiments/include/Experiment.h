@@ -5,21 +5,10 @@ using std::string;
 
 class Experiment {
 public:
-  // common result class
-  struct Result {
-    int m, n, k;    
-    int num_hashes;
-    double false_positive_ratio;
-    double time_insert;
-    double time_contains;
-  };
   // prepare data or any precomputation
   virtual void init() {};
   // do the experiment
   virtual void execute() = 0;
-  // get the results of the experiment
-  virtual Result getResult() = 0;
-  
   // short description of the experiment
   virtual string getDescription() {
     return "Empty experiment";
