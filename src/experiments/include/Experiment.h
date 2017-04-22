@@ -9,6 +9,9 @@ public:
   virtual void init() {};
   // do the experiment
   virtual void execute() = 0;
+  // output results to stdout
+  virtual void displayResults() {};
+  
   // short description of the experiment
   virtual string getDescription() {
     return "Empty experiment";

@@ -13,6 +13,7 @@ using namespace std;
 void runExperiment(shared_ptr<Experiment> exp) {
   exp->init();
   exp->execute();
+  exp->displayResults();
 }
 
 int main() {
