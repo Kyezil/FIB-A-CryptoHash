@@ -1,5 +1,5 @@
 #include <iostream>
-#include "BloomFilter.h"
+#include "BloomFilters.h"
 using namespace std;
 
 int main() {
@@ -9,7 +9,7 @@ int main() {
   cout << "use sha256 ? (y/n)" << endl;
   char ch;
   cin >> ch;  
-  BloomFilter BF(m,k, ch == 'y');
+  BF_fnv_murmur BF(m,k, ch == 'y');
   cout << "insert (+) or contains (?), (q) to quit" << endl;
   char op;
   string input;

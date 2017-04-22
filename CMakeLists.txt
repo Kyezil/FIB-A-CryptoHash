@@ -22,7 +22,7 @@ add_executable(cryptohash.exe ${SOURCES})
 target_link_libraries(cryptohash.exe experiments)
 
 # compile test examples
-add_executable(bf_example.exe src/test/bf_example.cc src/BloomFilter.cc)
+add_executable(bf_example.exe src/test/bf_example.cc src/BloomFilter.cc src/DoubleHashingBF.cc)
 target_link_libraries(bf_example.exe utils)
 
 add_executable(hashes.exe src/test/hashes.cc)
