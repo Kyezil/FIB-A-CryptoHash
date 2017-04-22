@@ -5,13 +5,12 @@
 #include <string>
 using namespace std;
 
-int main() {
-  int m = 20;
-  int k = 2;
+int main() {  
   string input = "this is an exemple of a beautiful bloom filter";
-  BF_fnv_murmur BF(20, 2, false);
   istringstream keys(input);
-  Execution e1(BF, keys);
+  Execution e1(BF_fnv_murmur(20,2,false));
+  e1.insertKeys(keys);
+  
   string test_s = "this is an exemple of an input string long enough"
   "so that it must give some false positive";
   istringstream test(test_s);

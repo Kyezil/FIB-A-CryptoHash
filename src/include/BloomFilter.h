@@ -14,6 +14,7 @@ public:
   BloomFilter(int m_size, int k_hashes, bool crypto);
   virtual void insert(const string s);
   virtual bool contains(const string s) const;
+  void clear();
 
 protected:
   int m_size;

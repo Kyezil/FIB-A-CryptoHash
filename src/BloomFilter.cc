@@ -27,6 +27,10 @@ bool BloomFilter::contains(const string s) const {
   return present;
 }
 
+void BloomFilter::clear() {
+  bits.assign(m_size,false);
+}
+
 string BloomFilter::preHashKey(const string s) const {
   if (crypt) return sha256(s);
   else return s;

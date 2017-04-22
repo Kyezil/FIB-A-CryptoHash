@@ -16,8 +16,9 @@ public:
   };
   
   // init given bloomfilter with keys in stream
-  Execution(BloomFilter &BF, istream &keys);
+  Execution(BloomFilter BF);
   
+  double insertKeys(istream &keys);  
   Result execute(istream &test);
   
 private:
