@@ -1,14 +1,15 @@
 #include <iostream>
-#include <bitset>
 #include "BloomFilter.h"
-#include "sha256.h"
 using namespace std;
 
-int bf_example() {
+int main() {
   size_t m, k;
   cout << "give m and k :" << endl;
   cin >> m >> k;
-  BloomFilter BF(m,k);
+  cout << "use sha256 ? (y/n)" << endl;
+  char ch;
+  cin >> ch;  
+  BloomFilter BF(m,k, ch == 'y');
   cout << "insert (+) or contains (?), (q) to quit" << endl;
   char op;
   string input;

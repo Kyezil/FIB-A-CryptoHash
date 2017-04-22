@@ -20,3 +20,7 @@ target_link_libraries(experiments utils)
 add_executable(cryptohash.exe ${SOURCES})
 target_link_libraries(cryptohash.exe experiments)
 
+# compile test examples
+add_executable(bf_example.exe src/test/bf_example.cc src/BloomFilter.cc)
+target_link_libraries(bf_example.exe utils)
+
