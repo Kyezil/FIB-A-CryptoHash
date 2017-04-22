@@ -15,7 +15,7 @@ public:
   virtual void insert(const string s);
   virtual bool contains(const string s) const;
 
-private:
+protected:
   int m_size;
   int k_hashes;
   bool crypt;
