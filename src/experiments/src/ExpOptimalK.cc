@@ -23,7 +23,6 @@ void ExpOptimalK::execute() {
     execs[3] = Execution(&bf3);
     execs[4] = Execution(&bf4);
     for (int i = 0; i < BFS_N; ++i) {
-      string s;
       ifstream keys;
       ifstream test;
       dg->getKeys(keys);

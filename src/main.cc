@@ -25,7 +25,8 @@ int main() {
   shared_ptr<RandomDataGenerator> rdg = make_shared<RandomDataGenerator>("random", 700, vk);
   // list of experiments
   experiments.push_back(make_shared<ExpOptimalK>(10000, 1, 150, rdg));
-  experiments.push_back(make_shared<ExpOptimalM>(500, 10000, 50, 10));
+  experiments.push_back(make_shared<ExpOptimalM>(5000, 15000, 10, rdg));
+
     
   cout << "----- Bloom filter experiments -----" << endl;
   int expNum = 1;
