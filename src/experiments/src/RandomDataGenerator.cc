@@ -4,6 +4,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include "RandomDataGenerator.h"
+#include "RandomString.h"
 using std::string;
 
 RandomDataGenerator::RandomDataGenerator(string experimentFolder, unsigned int n, const vector<unsigned int> &t) {
@@ -11,16 +12,18 @@ RandomDataGenerator::RandomDataGenerator(string experimentFolder, unsigned int n
 	RandomDataGenerator::dataFolder += experimentFolder;
 	mkdir(dataFolder.c_str(), S_IRUSR | S_IWUSR);
 
+	RandomString rs;
+
   ofstream exp_file;
   exp_file.open(RandomDataGenerator::dataFolder + "/keys.txt");
-  for (unsigned int i = 0; i < n; ++i) {
-  		//exp_file << "" << endl;
-  }
+  for (unsigned int i = 0; i < n; ++i)
+  		exp_file << rs.generate(10) << endl;
   exp_file.close();
 
   for (unsigned int i = 0; i < t.size(); ++i) {
 		exp_file.open(RandomDataGenerator::dataFolder + "/test_" + to_string(i) + ".txt");
-		//exp_file << "";
+		for (unsigned int i = 0; i < n; ++i)
+  		exp_file << rs.generate(10) << endl;
 		exp_file.close();
   }
 }
