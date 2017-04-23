@@ -5,9 +5,7 @@
 using namespace std;
 
 int main() {
-    vector<unsigned int> ks;
-    ks.push_back(5);
-    ks.push_back(2);
+    vector<unsigned int> ks = {5,2};
     RandomDataGenerator rdg = RandomDataGenerator("test", 3, ks);
     string s;
     ifstream keys_stream;

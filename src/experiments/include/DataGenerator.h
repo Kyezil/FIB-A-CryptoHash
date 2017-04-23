@@ -1,6 +1,7 @@
 #ifndef __DATA_GENERATOR_H__
 #define __DATA_GENERATOR_H__
 #include <istream>
+#include <iostream>
 #include <string>
 using namespace std;
 
@@ -9,10 +10,10 @@ public:
   static const string dataFolder;
   DataGenerator();
   // get istream of keys to insert
-  virtual void getKeys(istream &is) = 0;
+  virtual void getKeys(istream &is) {};
   // get istream of i-th test
-  virtual void getTest(int i, istream &is) = 0;
+  virtual void getTest(unsigned int i, istream &is) {};
   // get number of tests
-  virtual int size() const = 0;
+  virtual unsigned int size() const {};
 };
 #endif

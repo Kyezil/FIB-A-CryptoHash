@@ -1,14 +1,13 @@
 #ifndef __RANDOM_DATA_GENERATOR_H__
 #define __RANDOM_DATA_GENERATOR_H__
+#include "DataGenerator.h"
 #include <istream>
 #include <string>
 #include <vector>
 using namespace std;
 
-class RandomDataGenerator {
+class RandomDataGenerator : public DataGenerator {
 public:
-  string dataFolder = "data/";
-  unsigned int t_tests;
   RandomDataGenerator(string experimentFolder, unsigned int n, const vector<unsigned int> &t);
   // get istream of keys to insert
   virtual void getKeys(ifstream &is);
@@ -16,5 +15,8 @@ public:
   virtual void getTest(unsigned int t, ifstream &is);
   // get number of tests
   virtual unsigned int size() const;
+private:
+  string folder;
+  unsigned int t_tests;
 };
 #endif

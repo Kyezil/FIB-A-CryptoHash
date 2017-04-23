@@ -6,5 +6,5 @@ const string DataGenerator::dataFolder = "data";
 
 DataGenerator::DataGenerator() {
   // create dataFolder if inexistent
-  mkdir(dataFolder.c_str(), S_IRUSR | S_IWUSR);
+  mkdir(dataFolder.c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
 }

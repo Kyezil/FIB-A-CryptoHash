@@ -10,7 +10,6 @@
 #include "ExpOptimalM.h"
 using namespace std;
 
-
 void runExperiment(shared_ptr<Experiment> exp) {
   exp->init();
   exp->execute();
