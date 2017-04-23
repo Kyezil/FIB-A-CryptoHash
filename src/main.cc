@@ -24,7 +24,6 @@ int main() {
   vector<unsigned int> vk = { 20000 };
   shared_ptr<RandomDataGenerator> rdg = make_shared<RandomDataGenerator>("random", 700, vk);
   // list of experiments
-  experiments.push_back(make_shared<ExpExample>("exemple"));
   experiments.push_back(make_shared<ExpOptimalK>(10000, 1, 125, rdg));
   experiments.push_back(make_shared<ExpOptimalM>(500, 10000, 50, 10));
     
