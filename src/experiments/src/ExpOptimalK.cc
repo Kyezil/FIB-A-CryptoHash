@@ -22,7 +22,8 @@ void ExpOptimalK::execute() {
 }
 
 void ExpOptimalK::displayResults() {
-  cout << "fp ratios (k,fp)\n";
+  cout << "Experiment Optimal K results\n"
+       << "\tfp ratios (k,fp)\n";
   for (int i = 0; i < fp_ratios.size(); ++i) {
       cout << kmin+i << ' ' << fp_ratios[i] << '\n';
   }
