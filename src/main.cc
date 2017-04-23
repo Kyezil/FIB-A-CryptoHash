@@ -21,11 +21,11 @@ void runExperiment(shared_ptr<Experiment> exp) {
 int main() {
   vector<shared_ptr<Experiment> > experiments;
   
-  vector<unsigned int> vk = { 10 };
-  shared_ptr<RandomDataGenerator> rdg = make_shared<RandomDataGenerator>("random", 5, vk);
+  vector<unsigned int> vk = { 2000 };
+  shared_ptr<RandomDataGenerator> rdg = make_shared<RandomDataGenerator>("random", 500, vk);
   // list of experiments
   experiments.push_back(make_shared<ExpExample>("exemple"));
-  experiments.push_back(make_shared<ExpOptimalK>(100, 1, 20, rdg));
+  experiments.push_back(make_shared<ExpOptimalK>(1000, 1, 20, rdg));
   experiments.push_back(make_shared<ExpOptimalM>(500, 10000, 50, 10));
     
   cout << "----- Bloom filter experiments -----" << endl;
