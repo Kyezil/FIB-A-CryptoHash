@@ -6,7 +6,7 @@ using namespace std;
 
 class DataGenerator {
 public:
-  const string dataFolder;
+  static const string dataFolder;
   DataGenerator();
   // get istream of keys to insert
   virtual istream & getKeys() {};

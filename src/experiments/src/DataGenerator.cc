@@ -2,7 +2,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 
-DataGenerator::dataFolder = "data";
+const string DataGenerator::dataFolder = "data";
 
 DataGenerator::DataGenerator() {
   // create dataFolder if inexistent
