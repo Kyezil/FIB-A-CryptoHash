@@ -13,7 +13,7 @@ public:
   void displayResults() override;
   string getDescription() override {
     return "Uses a bad hash functions and computes the improvement in false positive rate "
-    "by using SHA256\n\tInserts random strings of length 10";
+    "by using SHA256\n\tInserts numerical strings in order";
   }
 private:
   int m,nmin,nmax,k,t;
