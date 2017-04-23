@@ -32,3 +32,7 @@ target_link_libraries(hashes.exe utils)
 # execution example
 add_executable(execution.exe src/test/execution.cc src/experiments/src/Execution.cc src/BloomFilter.cc src/DoubleHashingBF.cc)
 target_link_libraries(execution.exe experiments)
+
+# generator example
+add_executable(generator.exe src/test/generator.cc src/experiments/src/DataGenerator.cc src/experiments/src/RandomDataGenerator.cc)
+target_link_libraries(generator.exe experiments)
