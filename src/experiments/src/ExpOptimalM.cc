@@ -6,12 +6,12 @@
 #define BFS_N 5
 
 ExpOptimalM::ExpOptimalM(int mmin, int mmax, int k, shared_ptr<RandomDataGenerator> dg)
-: mmin(mmin), mmax(mmax), k(k), fp_ratios(BFS_N, vector<double> (max(0, (mmax-mmin)/100 + 1))), dg(dg) {}
+: mmin(mmin), mmax(mmax), k(k), fp_ratios(BFS_N, vector<double> (max(0, (mmax-mmin)/113 + 1))), dg(dg) {}
 
 void ExpOptimalM::execute() {
-  unsigned int range = (mmax - mmin)/100;
+  unsigned int range = (mmax - mmin)/113;
   for (unsigned int i = 0; i <= range; ++i) {
-    int m = mmin + 100*i;
+    int m = mmin + 113*i;
     Execution execs[BFS_N];
     BloomFilter bf(m, k, false);
     BF_fnv_murmur bf1(m, k, false);
@@ -38,7 +38,7 @@ void ExpOptimalM::displayResults() {
   cout << "Experiment Optimal M results" << endl
        << "M default fnv-murmur fnv-jenkins jenkins-murmur defaultSHA" << endl;
   for (int i = 0; i < fp_ratios[0].size(); ++i) {
-    cout << mmin + i*100;
+    cout << mmin + i*113;
     for (int j = 0; j < fp_ratios.size(); ++j) {
       cout << '\t' << fp_ratios[j][i];
     } cout << endl;
