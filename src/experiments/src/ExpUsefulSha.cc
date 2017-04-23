@@ -12,7 +12,7 @@ void ExpUsefulSha::execute() {
   BadBloomFilter bfSHA(m, k, true);
   Execution ex(&bf);
   Execution exSHA(&bfSHA);
-  for (int n = nmin; n <= nmax; n += 100) {
+  for (int n = nmin; n <= nmax; n += 50) {
     // insert keys
     stringstream ss1, ss2;
     for (int i = 1000; i <= 1000+n; ++i) {
@@ -38,7 +38,7 @@ void ExpUsefulSha::displayResults() {
   int n = nmin;
   for (int i = 0; i < fp_ratios.size(); ++i) {
     cout << n << ' ' << fp_ratios[i] << ' ' << fp_ratios_sha[i] << '\n';
-    n += 100;
+    n += 50;
   }
   cout << endl;
 }
