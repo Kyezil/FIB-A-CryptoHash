@@ -36,7 +36,7 @@ void ExpOptimalK::execute() {
 
 void ExpOptimalK::displayResults() {
   cout << "Experiment Optimal K results\n"
-       << "k default fnv_murmur fnv_jenkins jenkins_murmur defaultSHA\n";
+       << "k default fnv-murmur fnv-jenkins jenkins-murmur defaultSHA\n";
   for (int i = 0; i < fp_ratios[0].size(); ++i) {
     cout << kmin+i;
     for (int j = 0; j < fp_ratios.size(); ++j) {
