@@ -35,8 +35,8 @@ void ExpOptimalM::execute() {
 }
 
 void ExpOptimalM::displayResults() {
-  cout << "Experiment Optimal M results\n"
-       << "M default fnv_murmur fnv_jenkins jenkins_murmur defaultSHA\n";
+  cout << "Experiment Optimal M results" << endl
+       << "M default fnv-murmur fnv-jenkins jenkins-murmur defaultSHA" << endl;
   for (int i = 0; i < fp_ratios[0].size(); ++i) {
     cout << mmin + i*100;
     for (int j = 0; j < fp_ratios.size(); ++j) {
