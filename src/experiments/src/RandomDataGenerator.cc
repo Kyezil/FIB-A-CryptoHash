@@ -1,34 +1,38 @@
 #include <string>
 #include <iostream>
+#include <fstream>
 #include <sys/types.h>
 #include <sys/stat.h>
-#include "DataGenerator.h"
+#include "RandomDataGenerator.h"
 using std::string;
 
-DataGenerator::DataGenerator(string experimentFolder, unsigned int n, vector<unsigned int> &t) {
-	DataGenerator::dataFolder = "data/" + experimentFolder;
+RandomDataGenerator::RandomDataGenerator(string experimentFolder, unsigned int n, const vector<unsigned int> &t) {
+	RandomDataGenerator::t_tests = t.size();
+	RandomDataGenerator::dataFolder += experimentFolder;
 	mkdir(dataFolder.c_str(), S_IRUSR | S_IWUSR);
 
   ofstream exp_file;
-  exp_file.open("./" + DataGenerator::dataFolder + "/keys.txt");
+  exp_file.open(RandomDataGenerator::dataFolder + "/keys.txt");
   for (unsigned int i = 0; i < n; ++i) {
   		//exp_file << "" << endl;
   }
   exp_file.close();
 
   for (unsigned int i = 0; i < t.size(); ++i) {
-		exp_file.open("./" + DataGenerator::dataFolder + "/test_" + i + ".txt");
+		exp_file.open(RandomDataGenerator::dataFolder + "/test_" + to_string(i) + ".txt");
 		//exp_file << "";
 		exp_file.close();
   }
 }
 
-istream DataGenerator::getKeys() {
-  ifstream keys_file;
-  keys_file.open("./" + DataGenerator::dataFolder + "/keys.txt");
-  return keys_file;
+void RandomDataGenerator::getKeys(ifstream &keys) {
+  keys.open(RandomDataGenerator::dataFolder + "/keys.txt");
 }
 
-istream DataGenerator::getTest() {
-  return "Empty experiment to be used as structure";
+void RandomDataGenerator::getTest(unsigned int t, ifstream &test) {
+	test.open(RandomDataGenerator::dataFolder + "/test_" + to_string(t) + ".txt");
+}
+
+unsigned int RandomDataGenerator::size() const {
+	return RandomDataGenerator::t_tests;
 }

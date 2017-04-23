@@ -1,25 +1,28 @@
-#include "DataRandomGenerator.h"
+#include "RandomDataGenerator.h"
 #include <vector>
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 int main() {
-    vector<int> ks;
+    vector<unsigned int> ks;
     ks.push_back(5);
     ks.push_back(2);
-    DataGenerator dg = DataRandomGenerator("test", 3, ks);
+    RandomDataGenerator rdg = RandomDataGenerator("test", 3, ks);
     string s;
-    istream keys = dg.getKeys();
+    ifstream keys_stream;
+    rdg.getKeys(keys_stream);
     cout << "KEYS: \n";
-    while (keys >> s) {
+    while (keys_stream >> s) {
         cout << s << endl;
     }
     cout << "Ks: \n";
-    for (int i = 0; i < dg.size(); ++i) {
+    for (unsigned int i = 0; i < rdg.size(); ++i) {
         cout << "\tK " << i << endl;
         string s;
-        istream test = dg.getTest(i);
-        while (test >> s) {
+        ifstream test_stream; 
+        rdg.getTest(i, test_stream);
+        while (test_stream >> s) {
             cout << s << endl;
         }
         cout << endl;        

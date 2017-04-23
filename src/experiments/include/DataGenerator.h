@@ -9,10 +9,10 @@ public:
   static const string dataFolder;
   DataGenerator();
   // get istream of keys to insert
-  virtual getKeys(istream &is);
+  virtual void getKeys(istream &is) = 0;
   // get istream of i-th test
-  virtual getTest(int i, istream &is);
+  virtual void getTest(int i, istream &is) = 0;
   // get number of tests
-  virtual int size() const;
+  virtual int size() const = 0;
 };
 #endif
