@@ -1,5 +1,5 @@
-#ifndef __DATA_GENERATOR_H__
-#define __DATA_GENERATOR_H__
+#ifndef __RANDOM_DATA_GENERATOR_H__
+#define __RANDOM_DATA_GENERATOR_H__
 #include <istream>
 #include <string>
 using namespace std;
@@ -7,7 +7,7 @@ using namespace std;
 class DataGenerator {
 public:
   static const string dataFolder;
-  DataGenerator();
+  RandomDataGenerator(string experimentFolder, unsigned int n, vector<unsigned int> &t);
   // get istream of keys to insert
   virtual istream & getKeys();
   // get istream of i-th test
