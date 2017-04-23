@@ -8,6 +8,7 @@
 #include "ExpExample.h"
 #include "ExpOptimalK.h"
 #include "ExpOptimalM.h"
+#include "ExpTime.h"
 
 #include "RandomDataGenerator.h"
 using namespace std;
@@ -21,12 +22,12 @@ void runExperiment(shared_ptr<Experiment> exp) {
 int main() {
   vector<shared_ptr<Experiment> > experiments;
   
-  vector<unsigned int> vk = { 20000 };
+  vector<unsigned int> vk = { 20000, 10000, 10000};
   shared_ptr<RandomDataGenerator> rdg = make_shared<RandomDataGenerator>("random", 700, vk);
   // list of experiments
   experiments.push_back(make_shared<ExpOptimalK>(10000, 1, 150, rdg));
   experiments.push_back(make_shared<ExpOptimalM>(5000, 15000, 10, rdg));
-
+  experiments.push_back(make_shared<ExpTime>(10000,1,150,rdg));
     
   cout << "----- Bloom filter experiments -----" << endl;
   int expNum = 1;
