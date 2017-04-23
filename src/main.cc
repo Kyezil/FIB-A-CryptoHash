@@ -24,7 +24,7 @@ int main() {
   vector<unsigned int> vk = { 20000 };
   shared_ptr<RandomDataGenerator> rdg = make_shared<RandomDataGenerator>("random", 700, vk);
   // list of experiments
-  experiments.push_back(make_shared<ExpOptimalK>(10000, 1, 125, rdg));
+  experiments.push_back(make_shared<ExpOptimalK>(10000, 1, 150, rdg));
   experiments.push_back(make_shared<ExpOptimalM>(500, 10000, 50, 10));
     
   cout << "----- Bloom filter experiments -----" << endl;
@@ -36,7 +36,7 @@ int main() {
   cout << endl;
 
   int expChoice = 0;
-  
+  string output;
   // user interface
   do {
     cout << "Which experiment ? (0 for all, -1 to quit)" << endl;

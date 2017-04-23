@@ -7,8 +7,8 @@ class DoubleHashingBF : public BloomFilter {
 
 public:
   using BloomFilter::BloomFilter;
-  void insert(const string s);
-  bool contains(const string s) const;
+  virtual void insert(const string s) override;
+  virtual bool contains(const string s) const override;
   
   virtual uint32_t hash1(const string s) const = 0;
   virtual uint32_t hash2(const string s) const = 0;

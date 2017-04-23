@@ -18,7 +18,7 @@ public:
   }
 private:
   int m,n,kmin,kmax;
-  vector<double> fp_ratios;
+  vector<vector<double> > fp_ratios;
   shared_ptr<RandomDataGenerator> dg;
 };
 

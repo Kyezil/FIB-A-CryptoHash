@@ -7,7 +7,8 @@ ExpOptimalM::ExpOptimalM(int mmin, int mmax, int n, int k)
 
 void ExpOptimalM::execute() {
   for (int m = mmin; m <= mmax; ++m) {
-    Execution exec(BF_fnv_murmur(m, k, false));
+    BF_fnv_murmur bf(m,k,false);
+    Execution exec(&bf);
     //exec.insertKeys();
     //fp_ratios.push_back(exec.execute().fp_ratio);
   }

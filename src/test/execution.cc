@@ -8,7 +8,8 @@ using namespace std;
 int main() {  
   string input = "this is an exemple of a beautiful bloom filter";
   istringstream keys(input);
-  Execution e1(BF_fnv_murmur(20,2,false));
+  BF_fnv_murmur bf(20,2,false);
+  Execution e1(&bf);
   e1.insertKeys(keys);
   
   string test_s = "this is an exemple of an input string long enough"

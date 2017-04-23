@@ -4,6 +4,7 @@
 #include <istream>
 #include <string>
 #include <vector>
+#include <memory>
 #include <unordered_set>
 using namespace std;
 
@@ -16,14 +17,16 @@ public:
     double test_time;
   };
   
+  // default constructor
+  Execution(); 
   // init given bloomfilter with keys in stream
-  Execution(BloomFilter BF);
+  Execution(BloomFilter * BF);
   
   double insertKeys(istream &keys);  
   Result execute(istream &test);
   
 private:
-  BloomFilter BF;
+  BloomFilter * BF;
   unordered_set<string> keys;
 };
 

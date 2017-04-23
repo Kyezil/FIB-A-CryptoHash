@@ -7,6 +7,9 @@ BloomFilter::BloomFilter(int m, int k, bool s)
   : m_size(m), k_hashes(k), crypt(s), bits(m,false) {}
   
 // stupid default hash
+#include <iostream>
+using namespace std;
+
 void BloomFilter::insert(const string s) {
   size_t ha = hash<string>()(preHashKey(s));
   size_t h1 = ha & ((1 << 15) - 1); // first 15 bits

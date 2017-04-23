@@ -1,17 +1,19 @@
 #include "Execution.h"
 #include "Timer.h"
 
-Execution::Execution(BloomFilter bloomfilter)
+Execution::Execution() {}
+
+Execution::Execution(BloomFilter *bloomfilter)
   : BF(bloomfilter) {}
   
 #include <iostream>
 double Execution::insertKeys(istream &input) {
   string s;
   Timer timer;
-  BF.clear(); keys.clear();
+  BF->clear(); keys.clear();
   while (input >> s) keys.insert(s); // add element in set (for FP count)
   timer.start();
-  for (string s2 : keys) BF.insert(s2);
+  for (string s2 : keys) BF->insert(s2);
   return timer.step();
 }
 
@@ -24,7 +26,7 @@ Execution::Result Execution::execute(istream &test) {
   timer.start();
   while (test >> s) {
     ++count;
-    if (BF.contains(s) and keys.find(s) == keys.end())
+    if (BF->contains(s) and keys.find(s) == keys.end())
       ++fps;
   }  
   result.test_time = timer.step();
