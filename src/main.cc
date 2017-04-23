@@ -9,6 +9,7 @@
 #include "ExpOptimalK.h"
 #include "ExpOptimalM.h"
 #include "ExpTime.h"
+#include "ExpUsefulSHA.h"
 
 #include "RandomDataGenerator.h"
 using namespace std;
@@ -28,6 +29,7 @@ int main() {
   experiments.push_back(make_shared<ExpOptimalK>(10000, 1, 150, rdg));
   experiments.push_back(make_shared<ExpOptimalM>(5000, 15000, 10, rdg));
   experiments.push_back(make_shared<ExpTime>(10000,1,150,rdg));
+  experiments.push_back(make_shared<ExpUsefulSha>(10000, 1000, 5000, 10, 10000));
     
   cout << "----- Bloom filter experiments -----" << endl;
   int expNum = 1;
