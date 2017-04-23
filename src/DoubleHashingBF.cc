@@ -1,6 +1,9 @@
 #include "DoubleHashingBF.h"
+#include <iostream>
+using namespace std;
 
 void DoubleHashingBF::insert(const string s) {
+  cout << "INSERTING key " << s << endl;
   string s2 = preHashKey(s);
   uint32_t h1 = hash1(s2);
   uint32_t h2 = hash2(s2);

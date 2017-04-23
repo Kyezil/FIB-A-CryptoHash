@@ -10,11 +10,11 @@ class RandomDataGenerator : public DataGenerator {
 public:
   RandomDataGenerator(string experimentFolder, unsigned int n, const vector<unsigned int> &t);
   // get istream of keys to insert
-  virtual void getKeys(ifstream &is);
+  void getKeys(ifstream &is);
   // get istream of i-th test
-  virtual void getTest(unsigned int t, ifstream &is);
+  void getTest(unsigned int t, ifstream &is);
   // get number of tests
-  virtual unsigned int size() const;
+  unsigned int size() const;
 private:
   string folder;
   unsigned int t_tests;

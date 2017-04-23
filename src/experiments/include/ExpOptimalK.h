@@ -2,12 +2,14 @@
 #define __EXPOPTIMALK_H__
 #include "Experiment.h"
 #include "BloomFilter.h"
+#include "RandomDataGenerator.h"
 #include <iostream>
+#include <memory>
 using namespace std;
 
 class ExpOptimalK : public Experiment {
 public:
-  ExpOptimalK(int m, int n, int kmin, int kmax);
+  ExpOptimalK(int m, int kmin, int kmax, shared_ptr<RandomDataGenerator> dg);
   void execute() override;
   void displayResults() override;
   string getDescription() override {
@@ -17,6 +19,7 @@ public:
 private:
   int m,n,kmin,kmax;
   vector<double> fp_ratios;
+  shared_ptr<RandomDataGenerator> dg;
 };
 
 #endif

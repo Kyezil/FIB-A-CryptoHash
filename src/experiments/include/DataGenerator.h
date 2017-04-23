@@ -14,6 +14,9 @@ public:
   // get istream of i-th test
   virtual void getTest(unsigned int i, istream &is) {};
   // get number of tests
-  virtual unsigned int size() const {};
+  virtual unsigned int size() const {
+    return 0;
+  };
 };
+
 #endif

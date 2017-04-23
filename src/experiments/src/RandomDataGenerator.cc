@@ -4,12 +4,14 @@
 
 #include "RandomDataGenerator.h"
 #include "RandomString.h"
-using std::string;
+
 
 RandomDataGenerator::RandomDataGenerator(string experimentFolder, unsigned int n, const vector<unsigned int> &t) {
 	t_tests = t.size();
 	folder = dataFolder + "/" + experimentFolder;
 	mkdir(folder.c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+	string dataFolder = "data";
+	mkdir(dataFolder.c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
 
 	RandomString rs;
 
